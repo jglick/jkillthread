@@ -5,7 +5,7 @@ Essentially you pass a process ID (or unique name substring) and then a thread n
 
     java -jar jkillthread-1.0.jar 12345 "rogue HTTP handler"
 
-(`jps -lm` is useful for finding a process ID.)
+(`jps -lm` is useful for finding a process ID. `jstack 12345` can be used to see currently running threads.)
 
 Beware that killing a thread in Java (`Thread.stop`) can have various effects, depending on what it was doing:
 
