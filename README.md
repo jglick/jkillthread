@@ -1,9 +1,11 @@
-Command-line tool to kill a single thread in a Java VM, using the JDK 6+ Attach API.
+Command-line tool to kill a single thread in a Java VM, using the Oracle JDK 6+ Attach API.
 
-Builds using Maven. Run the resulting JAR (using the `java` command from a JDK) to get usage instructions. Essentially you pass a process ID (or unique name substring) and then a thread name (or substring):
+Download [`jkillthread-1.0.jar`](https://github.com/jglick/jkillthread/releases/download/1.0/jkillthread-1.0.jar) and run using the `java` command from a JDK to get usage instructions.
+Essentially you pass a process ID (or unique name substring) and then a thread name (or substring):
 
-    mvn package
-    java -jar target/jkillthread-1.0-SNAPSHOT.jar 12345 "rogue HTTP handler"
+    java -jar jkillthread-1.0.jar 12345 "rogue HTTP handler"
+
+(`jps -lm` is useful for finding a process ID.)
 
 Beware that killing a thread in Java (`Thread.stop`) can have various effects, depending on what it was doing:
 
